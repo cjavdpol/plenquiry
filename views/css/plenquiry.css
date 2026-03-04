@@ -1,0 +1,24 @@
+.plenquiry-widget {
+  margin: 1rem 0;
+}
+
+.plenquiry-title {
+  margin-bottom: 1rem;
+}
+
+.plenquiry-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.plenquiry-status {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.plenquiry-success {
+  color: #2e7d32;
+}
+
+.plenquiry-error {
+  color: #c62828;
+}

@@ -1,0 +1,13 @@
+A question was asked on this page:
+
+Page: {page_title}
+URL:  {page_url}
+
+From: {firstname} <{email}>
+
+Question:
+{question}
+
+--
+{shop_name}
+{shop_url}
