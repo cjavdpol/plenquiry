@@ -48,13 +48,23 @@ class Plenquiry extends Module implements WidgetInterface
     {
         return parent::install()
             && Configuration::updateValue(self::CONFIG_EMAIL, Configuration::get('PS_SHOP_EMAIL'))
-            && $this->registerHook('actionFrontControllerSetMedia');
+            && $this->registerHook('actionFrontControllerSetMedia')
+            && $this->registerHook('actionSiteBuilderInit');
     }
 
     public function uninstall()
     {
         return parent::uninstall()
             && Configuration::deleteByName(self::CONFIG_EMAIL);
+    }
+
+    public function hookActionSiteBuilderInit()
+    {
+        $widgetFile = __DIR__ . '/views/elementflow/widget.php';
+        add_action('elementor/widgets/register', function ($manager) use ($widgetFile) {
+            require_once $widgetFile;
+            $manager->register(new \Elementor\Widget_plenquiry());
+        });
     }
 
     public function hookActionFrontControllerSetMedia()
